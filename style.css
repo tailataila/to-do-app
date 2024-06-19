@@ -61,3 +61,38 @@ button {
     cursor: pointer;
     border-radius: 40px;
 }
+
+ul li {
+    list-style: none; /* removes dot */
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer; /* points like link */
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-position: center;
+    top: 12px;
+    left: 8px;
+    background-size: cover;
+/* cover = Scales the image to be large enough until the background area is completely covered by the image.
+Some parts of the image may not be in view within the area.
+100% = Fills the area but all of the image is visible */
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(images/checked.png);
+}
+
